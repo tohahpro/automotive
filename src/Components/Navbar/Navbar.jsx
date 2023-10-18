@@ -54,7 +54,7 @@ const Navbar = () => {
                 ${open ? ' ' : 'hidden'} md:static 
                 md:bg-transparent text-center rounded-lg gap-8`}
                     >
-                        <ul className="md:flex gap-12 md:items-center md:mr-12">
+                        <ul className="md:flex gap-12 md:items-center md:mr-12 text-blue-500">
                             <li className=" text-xl font-medium">
                                 <NavLink
                                     to="/"
@@ -94,6 +94,16 @@ const Navbar = () => {
                                     }
                                 >
                                     Login
+                                </NavLink>
+                            </li>
+                            <li className=" text-xl font-medium">
+                                <NavLink
+                                    to="/register"
+                                    className={({ isActive, isPending }) =>
+                                        isPending ? "pending" : isActive ? "text-[#FF444A] underline" : ""
+                                    }
+                                >
+                                    Register
                                 </NavLink>
                             </li>
 
