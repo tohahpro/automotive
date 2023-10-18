@@ -37,7 +37,7 @@ const Navbar = () => {
                         lg:fixed items-center justify-between lg:top-0 lg:left-0 lg:w-full lg:z-[10] lg:ease-in lg:duration-300 lg:px-40 lg:pb-2 md:pt-6">
 
 
-                <div className="flex items-center justify-between mx-32">
+                <div className="flex items-center justify-between px-16">
                     {/* <Logo></Logo> */}
 
                     <h2 className="text-3xl font-medium text-white">Logo</h2>
