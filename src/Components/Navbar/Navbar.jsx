@@ -1,7 +1,8 @@
 import { NavLink } from "react-router-dom";
 
 import { BiMenu, BiMenuAltRight } from 'react-icons/bi';
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
 
 // import Logo from "../Logo/Logo";
 
@@ -9,7 +10,7 @@ import { useEffect, useState } from "react";
 const Navbar = () => {
 
     const [open, setOpen] = useState(false)
-
+    const { user, LogOut } = useContext(AuthContext)
 
     const [color, setColor] = useState('transparent')
     const [textColor, setTextColor] = useState('white')
@@ -88,16 +89,6 @@ const Navbar = () => {
 
                             <li className=" text-xl font-medium">
                                 <NavLink
-                                    to="/login"
-                                    className={({ isActive, isPending }) =>
-                                        isPending ? "pending" : isActive ? "text-[#FF444A] underline" : ""
-                                    }
-                                >
-                                    Login
-                                </NavLink>
-                            </li>
-                            <li className=" text-xl font-medium">
-                                <NavLink
                                     to="/register"
                                     className={({ isActive, isPending }) =>
                                         isPending ? "pending" : isActive ? "text-[#FF444A] underline" : ""
@@ -110,26 +101,43 @@ const Navbar = () => {
                         </ul>
 
                         <div>
-                            <div className="dropdown dropdown-end">
-                                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                                    <div className="w-24 rounded-full">
-                                        <img src=""
-                                            alt="" />
-                                    </div>
-                                </label>
-                                <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content rounded-box w-52 text-2xl font-medium bg-black/80 text-white">
-                                    <li>
-                                        <a className="justify-between">
-                                            {/* {user.displayName} */}
-                                        </a>
-                                    </li>
+                            {
+                                user ?
 
-                                    <li>
-                                        <button className="py-2 px-3 hover:text-white" >Logout</button>
-                                    </li>
-                                </ul>
-                            </div>
+                                    <div className="dropdown dropdown-end">
+                                        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                            <div className="w-24 rounded-full">
+                                                <img src={user.photoURL}
+                                                    alt="" />
+                                            </div>
+                                        </label>
+                                        <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content rounded-box w-52 text-2xl font-medium bg-black/80 text-white">
+                                            <li>
+                                                <a className="justify-between">
+                                                    {user?.displayName}
+                                                </a>
+                                            </li>
 
+                                            <li>
+                                                <button className="py-2 px-3 hover:text-white" onClick={LogOut}>Logout</button>
+                                            </li>
+                                        </ul>
+                                    </div> :
+
+
+                                    <ul>
+                                        <li className="text-xl font-medium">
+                                            <NavLink
+                                                to='/login'
+                                                className={({ isActive, isPending }) =>
+                                                    isPending ? "pending" : isActive ? "text-[#FF444A] underline" : ""
+                                                }
+                                            >LogIn
+                                            </NavLink>
+                                        </li>
+                                    </ul>
+
+                            }
                         </div>
                     </div>
                 </div>

@@ -2,6 +2,7 @@ import { useContext, useState } from 'react';
 import { AiOutlineEyeInvisible, AiOutlineEye } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Provider/AuthProvider';
+import SocialRegister from './SocialRegister';
 
 const Register = () => {
 
@@ -65,7 +66,7 @@ const Register = () => {
                         </Link>
 
                         </p>
-
+                        <SocialRegister></SocialRegister>
 
                     </div>
 
