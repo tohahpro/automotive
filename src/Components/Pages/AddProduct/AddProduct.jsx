@@ -4,6 +4,29 @@ const AddProduct = () => {
 
     const handleAddProduct = e => {
         e.preventDefault()
+        const form = e.target
+        const product_name = form.product_name.value
+        const brand_name = form.brand_name.value.toUpperCase()
+        const type = form.type.value
+        const price = form.price.value
+        const rating = form.rating.value
+        const description = form.description.value
+        const photo = form.photo.value
+        const product = { product_name, brand_name, type, price, rating, description, photo }
+
+        console.log(product);
+
+        fetch('http://localhost:5000/products', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(product)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+            })
     }
 
 
@@ -21,7 +44,7 @@ const AddProduct = () => {
                                 <span className="label-text text-xl font-semibold">Product Name</span>
                             </label>
                             <label>
-                                <input type="text" required name="name" placeholder="Enter product name" className="input rounded-sm w-full" />
+                                <input type="text" required name="product_name" placeholder="Enter product name" className="input rounded-sm w-full" />
                             </label>
                         </div>
 
@@ -32,7 +55,7 @@ const AddProduct = () => {
                                 <span className="label-text text-xl font-semibold">Brand Name</span>
                             </label>
                             <label>
-                                <input type="text" name="brand" placeholder="Enter product brand name" className="input rounded-sm w-full" required />
+                                <input type="text" name="brand_name" placeholder="Enter product brand name" className="input rounded-sm w-full" required />
                             </label>
                         </div>
                     </div>
