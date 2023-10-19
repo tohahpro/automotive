@@ -73,7 +73,7 @@ const Navbar = () => {
                                         isPending ? "pending" : isActive ? "text-[#FF444A] underline" : ""
                                     }
                                 >
-                                    Add-Product
+                                    Add Product
                                 </NavLink>
                             </li>
                             <li className=" text-xl font-medium">
@@ -83,7 +83,7 @@ const Navbar = () => {
                                         isPending ? "pending" : isActive ? "text-[#FF444A] underline" : ""
                                     }
                                 >
-                                    My-Cart
+                                    My Cart
                                 </NavLink>
                             </li>
 

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useLoaderData, useParams } from "react-router-dom";
 import Rating from "./Rating";
+import Swal from "sweetalert2";
 
 
 const ProductsDetails = () => {
@@ -17,7 +18,46 @@ const ProductsDetails = () => {
 
     }, [dataLoad, id])
 
-    console.log(details);
+    const { photo, product_name, type, price, rating } = details
+
+    // console.log(details);
+
+
+
+    const handleOrder = (e) => {
+        e.preventDefault()
+        const orderItem = {
+            photo: photo,
+            product_name: product_name,
+            type: type,
+            price: price,
+            rating: rating
+        }
+
+        console.log(orderItem);
+
+
+        fetch('http://localhost:5000/users', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(orderItem)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Add To Cart',
+                        icon: 'success',
+                        confirmButtonText: 'Yes'
+                    })
+                }
+            })
+    }
+
 
     return (
         <div className="flex justify-center items-center h-[100vh]">
@@ -38,7 +78,10 @@ const ProductsDetails = () => {
                     <p className="text-base font-medium"><span className="text-xl font-semibold">Details : </span> {details.description}</p>
 
                     <p className="text-xl font-semibold">Price : {details.price} $</p>
-                    <Link className="btn w-full bg-black text-white hover:text-black">Order Now</Link>
+                    <Link
+                        onClick={handleOrder}
+
+                        className="btn w-full bg-black text-white hover:text-black">Add To Cart</Link>
                 </div>
             </div>
         </div>

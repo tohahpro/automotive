@@ -45,7 +45,7 @@ const Products = () => {
                                                 </Link>
                                                 <Link
                                                     className="btn px-6">
-                                                    Update  button
+                                                    Update button
                                                 </Link>
 
 
