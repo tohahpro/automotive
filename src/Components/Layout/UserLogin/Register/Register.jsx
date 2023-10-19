@@ -1,13 +1,19 @@
 import { useContext, useState } from 'react';
 import { AiOutlineEyeInvisible, AiOutlineEye } from 'react-icons/ai';
-import { Link } from 'react-router-dom';
-import { AuthContext } from '../../../Provider/AuthProvider';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+
 import SocialRegister from './SocialRegister';
+import toast from 'react-hot-toast';
+import { AuthContext } from '../../../Provider/AuthProvider';
 
 const Register = () => {
 
 
     const [showPassword, setShowPassword] = useState(false)
+
+    const location = useLocation()
+    const navigate = useNavigate()
+
 
     const { signUp } = useContext(AuthContext)
 
@@ -20,12 +26,32 @@ const Register = () => {
         console.log(name, email, password);
 
 
+        if (!/^(?=.*[a-z]).{6,}$/.test(password)) {
+            return toast.error("Password length must have 6 characters")
+        }
+
+        else if (!/(?=.*[!@#$%^&*])/.test(password)) {
+            return toast.error("Password must have a special character")
+        }
+        else if (!/(?=.*[A-Z])/.test(password)) {
+            return toast.error("Password must have a capital letter")
+        }
+        else if (!/(?=.*\d)/.test(password)) {
+            return toast.error("Password must have a number")
+        }
+
         signUp(email, password)
             .then(res => {
-                console.log(res.user)
+                if (res.user) {
+                    toast.success('Register successful')
+                }
+
+                navigate(location?.state ? location.state : '/')
             })
 
-            .catch(error => console.error(error))
+            .catch(error => {
+                return toast.error(error.message)
+            })
 
 
     }

@@ -1,14 +1,16 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../../Provider/AuthProvider";
 import { AiOutlineEyeInvisible, AiOutlineEye } from 'react-icons/ai';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import SocialLogin from "./SocialLogin";
+import toast from "react-hot-toast";
 
 
 const Login = () => {
 
     const [showPassword, setShowPassword] = useState(false)
-
+    const location = useLocation()
+    const navigate = useNavigate()
 
     const { Login } = useContext(AuthContext)
 
@@ -19,12 +21,30 @@ const Login = () => {
         const password = e.target.password.value
         console.log(email, password);
 
+        if (!/^(?=.*[a-z]).{6,}$/.test(password)) {
+            return toast.error("Password length must have 6 characters")
+        }
+
+        else if (!/(?=.*[!@#$%^&*])/.test(password)) {
+            return toast.error("Password must have a special character")
+        }
+        else if (!/(?=.*[A-Z])/.test(password)) {
+            return toast.error("Password must have a capital letter")
+        }
+        else if (!/(?=.*\d)/.test(password)) {
+            return toast.error("Password must have a number")
+        }
+
         Login(email, password)
             .then(res => {
-                console.log(res.user)
+                if (res.user) {
+                    toast.success('Login successful')
+                }
+
+                navigate(location?.state ? location.state : '/')
             })
             .catch(error => {
-                console.log(error)
+                return toast.error(error.message)
             })
     }
 
