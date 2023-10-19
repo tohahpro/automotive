@@ -1,11 +1,7 @@
-
-
 import { useEffect, useState } from "react";
 import { Link, useLoaderData, useParams } from "react-router-dom";
 import Rating from "./Rating";
-
-
-
+import Slider from "./Slider";
 
 const Products = () => {
 
@@ -24,17 +20,18 @@ const Products = () => {
             setNoDataFound('There is no data for this since you did not donate.')
         }
 
-
-
     }, [databaseLoaded, brand_name])
 
     return (
-        <div className="my-40">
+        <div>
+            <div>
+                <Slider></Slider>
+            </div>
             {
                 noDataFound ?
                     <p className="flex items-center justify-center h-[80vh] text-sm  md:text-xl font-bold">{noDataFound}</p>
                     :
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mx-56">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mx-56 my-40">
                         {
                             data.map((item, idx) =>
                                 <div key={idx}>
@@ -44,12 +41,10 @@ const Products = () => {
                                             <h2 className="card-title">{item.product_name}</h2>
                                             <h2 className="card-title">{item.brand_name}</h2>
                                             <h2 className="card-title">{item.type}</h2>
-
                                             <Rating rating={item.rating}></Rating>
                                             <h2 className="card-title">{item.price}</h2>
                                             <p>If a dog chews shoes whose shoes does he choose?</p>
                                             <div className="card-actions flex justify-center">
-
                                                 <Link to={`/productsDetails/${item._id}`}
                                                     className="btn px-6">Details button
                                                 </Link>
@@ -57,8 +52,6 @@ const Products = () => {
                                                     className="btn px-6">
                                                     Update button
                                                 </Link>
-
-
                                             </div>
                                         </div>
                                     </div>
