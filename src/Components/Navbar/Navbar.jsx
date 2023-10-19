@@ -30,20 +30,20 @@ const Navbar = () => {
     }, [])
 
     return (
-        <div className="max-w-[1400px]">
+        <div>
             <nav style={{ backgroundColor: `${color}` }}
                 className="
-                        px-4 absolute top-8 left-0 right-0 z-[2]           
-                        lg:fixed items-center justify-between lg:top-0 lg:left-0 lg:w-full lg:z-[10] lg:ease-in lg:duration-300 lg:px-40 lg:pb-2 md:pt-6">
+                        absolute top-8 left-0 right-0 z-[2]           
+                        lg:fixed items-center justify-between lg:top-0 lg:left-0 lg:w-full lg:z-[10] lg:ease-in lg:duration-300 lg:px-56 lg:pb-2 md:pt-6">
 
 
-                <div className="flex items-center justify-between px-16">
+                <div className="flex items-center justify-between">
                     {/* <Logo></Logo> */}
 
-                    <h2 className="text-3xl font-medium text-white">Logo</h2>
+                    <h2 className="text-3xl font-medium text-white pl-2 md:pl-0">Logo</h2>
 
 
-                    <div className="md:hidden justify-end text-2xl text-white" onClick={() => setOpen(!open)}>
+                    <div className="md:hidden justify-end text-2xl pr-2 text-white" onClick={() => setOpen(!open)}>
                         {
                             open === true ? <BiMenuAltRight></BiMenuAltRight> : <BiMenu></BiMenu>
                         }
@@ -51,11 +51,11 @@ const Navbar = () => {
 
                     <div
                         style={{ color: `${textColor}` }}
-                        className={`absolute md:flex mt-64 ml-40 bg-black md:m-0 p-6 md:p-0 lg:m-0 duration-2000
+                        className={`absolute md:flex mt-64 px-36 bg-black md:m-0  md:p-0 duration-2000
                 ${open ? ' ' : 'hidden'} md:static 
-                md:bg-transparent text-center rounded-lg gap-8`}
+                md:bg-transparent text-center space-y-2`}
                     >
-                        <ul className="md:flex gap-12 md:items-center md:mr-12 text-blue-500">
+                        <ul className="md:flex lg:gap-12 md:items-center md:mr-12 text-blue-500">
                             <li className=" text-xl font-medium">
                                 <NavLink
                                     to="/"

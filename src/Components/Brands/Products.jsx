@@ -13,17 +13,27 @@ const Products = () => {
     const { brand_name } = useParams()
 
     const [data, setData] = useState([])
+    const [noDataFound, setNoDataFound] = useState(false)
 
     useEffect(() => {
         const filterData = databaseLoaded.filter(item => item.brand_name.toUpperCase() == brand_name.toUpperCase())
-        setData(filterData)
+
+        if (filterData.length > 0) {
+            setData(filterData)
+        } else {
+            setNoDataFound('There is no data for this since you did not donate.')
+        }
+
+
+
     }, [databaseLoaded, brand_name])
 
     return (
         <div className="my-40">
             {
-                data ?
-
+                noDataFound ?
+                    <p className="flex items-center justify-center h-[80vh] text-sm  md:text-xl font-bold">{noDataFound}</p>
+                    :
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mx-56">
                         {
                             data.map((item, idx) =>
@@ -55,9 +65,7 @@ const Products = () => {
                                 </div>
                             )
                         }
-
-                    </div> :
-                    <p className="flex justify-center items-center h-[100vh]">not data</p>
+                    </div>
             }
         </div>
 
