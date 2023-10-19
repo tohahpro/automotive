@@ -60,7 +60,7 @@ const MyCart = () => {
                                 <p>Price : {product.price} $</p>
                                 <div className="card-actions">
                                     <button
-                                        onClick={handleDelete}
+                                        onClick={() => handleDelete(product._id)}
                                         className="btn btn-wide">Delete</button>
                                 </div>
                             </div>
