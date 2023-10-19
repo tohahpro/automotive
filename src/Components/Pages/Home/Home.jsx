@@ -25,7 +25,7 @@ const Home = () => {
 
 
     return (
-        <div className="">
+        <div className="bg-[#c9c8c5ce]">
             <Banner></Banner>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-20 lg:px-56">
                 {
@@ -35,7 +35,7 @@ const Home = () => {
                             key={item.id}>
 
                             <Link to={`/products/${item.brand_name}`}>
-                                <div className="card card-compact w-full bg-base-100 shadow-xl">
+                                <div className="card card-compact w-full bg-base-100 shadow-xl h-60">
                                     <figure><img className="w-36 lg:w-40" src={item.image} alt="Shoes" /></figure>
                                     <div className="card-body">
                                         <h2 className="card-title flex justify-center">{item.brand_name.toUpperCase()}</h2>

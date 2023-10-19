@@ -23,7 +23,7 @@ const Products = () => {
     }, [databaseLoaded, brand_name])
 
     return (
-        <div>
+        <div className="bg-[#D3D3D0]">
             <div>
                 <Slider></Slider>
             </div>
@@ -31,19 +31,18 @@ const Products = () => {
                 noDataFound ?
                     <p className="flex items-center justify-center h-[80vh] text-sm  md:text-xl font-bold">{noDataFound}</p>
                     :
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mx-56 my-40">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mx-56 py-40 bg-[#D3D3D0]">
                         {
                             data.map((item, idx) =>
                                 <div key={idx}>
                                     <div className="card card-compact w-full bg-base-100 shadow-xl">
                                         <figure><img src={item.photo} alt="Shoes" /></figure>
                                         <div className="card-body">
-                                            <h2 className="card-title">{item.product_name}</h2>
-                                            <h2 className="card-title">{item.brand_name}</h2>
+                                            <h2 className="card-title">Name : {item.product_name}</h2>
+
                                             <h2 className="card-title">{item.type}</h2>
                                             <Rating rating={item.rating}></Rating>
-                                            <h2 className="card-title">{item.price}</h2>
-                                            <p>If a dog chews shoes whose shoes does he choose?</p>
+                                            <h2 className="card-title font-sans">Price : {item.price} $</h2>
                                             <div className="card-actions flex justify-center">
                                                 <Link to={`/productsDetails/${item._id}`}
                                                     className="btn px-6">Details button

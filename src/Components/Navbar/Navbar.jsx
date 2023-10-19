@@ -23,7 +23,7 @@ const Navbar = () => {
             }
             else {
                 setColor('transparent')
-                setTextColor('#ffff')
+                setTextColor('#111111')
             }
         }
         window.addEventListener('scroll', changeColor);
@@ -55,49 +55,37 @@ const Navbar = () => {
                 ${open ? ' ' : 'hidden'} md:static 
                 md:bg-transparent text-center space-y-2`}
                     >
-                        <ul className="md:flex lg:gap-12 md:items-center md:mr-12 text-blue-500">
-                            <li className=" text-xl font-medium">
+                        <ul className="md:flex lg:gap-12 md:items-center md:mr-12  text-lg font-semibold">
+                            <li>
                                 <NavLink
                                     to="/"
                                     className={({ isActive, isPending }) =>
-                                        isPending ? "pending" : isActive ? "text-[#FF444A] underline" : ""
+                                        isPending ? "pending" : isActive ? "text-[#67B6F4] underline" : ""
                                     }
                                 >
                                     Home
                                 </NavLink>
                             </li>
-                            <li className=" text-xl font-medium">
+                            <li>
                                 <NavLink
                                     to="/addProduct"
                                     className={({ isActive, isPending }) =>
-                                        isPending ? "pending" : isActive ? "text-[#FF444A] underline" : ""
+                                        isPending ? "pending" : isActive ? "text-[#67B6F4] underline" : ""
                                     }
                                 >
                                     Add Product
                                 </NavLink>
                             </li>
-                            <li className=" text-xl font-medium">
+                            <li>
                                 <NavLink
                                     to="/myCart"
                                     className={({ isActive, isPending }) =>
-                                        isPending ? "pending" : isActive ? "text-[#FF444A] underline" : ""
+                                        isPending ? "pending" : isActive ? "text-[#67B6F4] underline" : ""
                                     }
                                 >
                                     My Cart
                                 </NavLink>
                             </li>
-
-                            <li className=" text-xl font-medium">
-                                <NavLink
-                                    to="/register"
-                                    className={({ isActive, isPending }) =>
-                                        isPending ? "pending" : isActive ? "text-[#FF444A] underline" : ""
-                                    }
-                                >
-                                    Register
-                                </NavLink>
-                            </li>
-
                         </ul>
 
                         <div>
@@ -126,11 +114,11 @@ const Navbar = () => {
 
 
                                     <ul>
-                                        <li className="text-xl font-medium">
+                                        <li className="text-lg font-semibold pb-2">
                                             <NavLink
                                                 to='/login'
                                                 className={({ isActive, isPending }) =>
-                                                    isPending ? "pending" : isActive ? "text-[#FF444A] underline" : ""
+                                                    isPending ? "pending" : isActive ? "text-[#67B6F4] underline" : ""
                                                 }
                                             >LogIn
                                             </NavLink>
