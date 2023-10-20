@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { BiMenu, BiMenuAltRight } from 'react-icons/bi';
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
@@ -62,10 +62,12 @@ const Navbar = () => {
 
 
                 <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                        <img className="w-24" src={Logo} alt="" />
-                        <p className="text-xl font-semibold text-red-500">GearHeads</p>
-                    </div>
+                    <Link to='/'>
+                        <div className="flex items-center gap-2">
+                            <img className="w-24" src={Logo} alt="" />
+                            <p className="text-xl font-semibold text-red-500">GearHeads</p>
+                        </div>
+                    </Link>
 
 
                     <div className="md:hidden justify-end text-2xl pr-2 text-slate-400" onClick={() => setOpen(!open)}>
