@@ -31,7 +31,7 @@ const AddProduct = () => {
 
 
     return (
-        <div className="py-36  px-56">
+        <div className="py-36  px-2  md:px-56">
             <h2 className='text-center pt-8 pb-4 text-5xl font-semibold font-rancho'>Add Product</h2>
             <p className='max-w-3xl mx-auto text-center text-lg pb-8'>It is a long established fact that a reader will be distraceted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here.</p>
             <div>
@@ -39,7 +39,7 @@ const AddProduct = () => {
 
                     {/* form row  */}
                     <div className="md:flex gap-6">
-                        <div className=" md:w-1/2">
+                        <div className="space-y-4 md:w-1/2">
                             <label>
                                 <span className=" text-xl font-semibold">Product Name</span>
                             </label>
@@ -50,7 +50,7 @@ const AddProduct = () => {
 
                         {/* Chef*/}
 
-                        <div className="form-control md:w-1/2">
+                        <div className="space-y-4 md:w-1/2">
                             <label>
                                 <span className="text-xl font-semibold">Brand Name</span>
                             </label>
@@ -66,7 +66,7 @@ const AddProduct = () => {
                     {/* Supplier */}
 
                     <div className="md:flex gap-6">
-                        <div className="form-control md:w-1/2">
+                        <div className="space-y-4 md:w-1/2">
                             <label>
                                 <span className="text-xl font-semibold">Type</span>
                             </label>
@@ -77,7 +77,7 @@ const AddProduct = () => {
 
                         {/* Taste */}
 
-                        <div className="form-control md:w-1/2">
+                        <div className="space-y-4 md:w-1/2">
                             <label>
                                 <span className="text-xl font-semibold">Price</span>
                             </label>
@@ -94,7 +94,7 @@ const AddProduct = () => {
 
                         {/* Category */}
 
-                        <div className="form-control md:w-1/2">
+                        <div className="space-y-4 md:w-1/2">
                             <label>
                                 <span className="text-xl font-semibold">Rating</span>
                             </label>
@@ -105,7 +105,7 @@ const AddProduct = () => {
 
                         {/* Details  */}
 
-                        <div className="form-control md:w-1/2">
+                        <div className="space-y-4 md:w-1/2">
                             <label>
                                 <span className="text-xl font-semibold">Description</span>
                             </label>
@@ -117,7 +117,7 @@ const AddProduct = () => {
 
                     {/* form Photo url  */}
 
-                    <div className="form-control md:w-full">
+                    <div className="space-y-4 md:w-full">
                         <label>
                             <span className="text-xl font-semibold">Photo</span>
                         </label>

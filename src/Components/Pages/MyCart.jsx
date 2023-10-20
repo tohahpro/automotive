@@ -46,7 +46,7 @@ const MyCart = () => {
     }
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-10 gap-y-5 px-56 py-60">
+        <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-10 gap-y-5 lg:px-56 py-60">
             {
                 products.map(product =>
                     <div key={product._id}>

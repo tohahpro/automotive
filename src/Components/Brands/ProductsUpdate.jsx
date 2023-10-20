@@ -44,7 +44,7 @@ const ProductsUpdate = () => {
 
 
     return (
-        <div className="py-36  px-56">
+        <div className="py-36 px-2 lg:px-56">
             <h2 className='text-center pt-8 pb-4 text-5xl font-semibold font-rancho'>Update Product</h2>
             <div className="py-16">
                 <form onSubmit={handleUpdateProduct} className="space-y-8">

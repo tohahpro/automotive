@@ -31,7 +31,7 @@ const Products = () => {
                 noDataFound ?
                     <p className="flex items-center justify-center h-[80vh] text-sm  md:text-xl font-bold">{noDataFound}</p>
                     :
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mx-56 py-40">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:mx-56 py-40">
                         {
                             data.map((item, idx) =>
                                 <div key={idx}>

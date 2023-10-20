@@ -3,8 +3,10 @@ import { Link } from "react-router-dom";
 
 import { useEffect, useState } from "react";
 import Banner from "./Banner";
+import BrandMarquee from "./BrandMarquee";
+import clientRating from '../../../assets/image/logo-icons/3-layers-1.png'
+import Service from "./Service";
 
-// import img from '../../../assets/image/Home-page-bottom-image.jpg'
 
 
 
@@ -29,8 +31,26 @@ const Home = () => {
         <div>
             <Banner></Banner>
 
-            <div className=" flex justify-end">
+            <div className="py-20">
+                <BrandMarquee></BrandMarquee>
+            </div>
 
+            <div className="lg:px-56">
+                <h1 className="text-center text-5xl font-extrabold">Our Clients Love Us!</h1>
+
+                <div className="md:flex py-12 md:py-20">
+                    <div className="flex-1 px-8">
+                        <img src={clientRating} alt="" />
+                    </div>
+                    <div className="flex-1 md:px-8">
+                        <p className="md:text-xl md:font-medium flex justify-stretch pt-10 px-8 md:p-0">
+                            {`
+                            aven
+                            Flexibility, Customizability, Design Quality, Features - this theme ticks every single box. In 10 years of using ThemeForest i've never felt compelled to leave a review until now. TangibleDesign have made this so easy, and stress free, and just when I think they haven't thought of that feature - they have. e.g. i've just set up "Sold" banner across listing thumbnails with a custom colour. LOVE IT!
+                           `}
+                        </p>
+                    </div>
+                </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-20 lg:px-56">
@@ -52,6 +72,10 @@ const Home = () => {
                         </div>
                     )
                 }
+            </div>
+
+            <div className="flex justify-center py-16">
+                <Service></Service>
             </div>
 
 

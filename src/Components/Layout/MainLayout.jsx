@@ -8,11 +8,11 @@ const MainLayout = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <div className="">
-                <Outlet></Outlet>
-                <Footer></Footer>
-                <Toaster />
-            </div>
+
+            <Outlet></Outlet>
+            <Footer></Footer>
+            <Toaster />
+
         </div>
     );
 };
