@@ -15,7 +15,7 @@ const Register = () => {
     const navigate = useNavigate()
 
 
-    const { signUp } = useContext(AuthContext)
+    const { signUp, userUpdate } = useContext(AuthContext)
 
     const handleRegister = e => {
         e.preventDefault()
@@ -23,7 +23,8 @@ const Register = () => {
         const name = e.target.name.value
         const email = e.target.email.value
         const password = e.target.password.value
-        console.log(name, email, password);
+        const image = e.target.image.value
+        console.log(name, email, password, image);
 
 
         if (!/^(?=.*[a-z]).{6,}$/.test(password)) {
@@ -42,11 +43,15 @@ const Register = () => {
 
         signUp(email, password)
             .then(res => {
+                userUpdate(name, image)
+                    .then(() => {
+
+                    })
                 if (res.user) {
                     toast.success('Register successful')
+                    navigate('/')
+                    navigate(location?.state ? location.state : '/')
                 }
-
-                navigate(location?.state ? location.state : '/')
             })
 
             .catch(error => {
@@ -74,7 +79,14 @@ const Register = () => {
                             <label htmlFor="">Email</label><br />
                             <input className='border w-full rounded-md p-2 my-2' type="text" name="email" placeholder='email' required />
                         </div>
-                        {/* password field  */}
+                        {/* image field  */}
+                        <div>
+                            <label htmlFor="">Image URL</label><br />
+                            <input className='border w-full rounded-md p-2 my-2' type="text" name="image" placeholder='Image url' required />
+                        </div>
+
+
+                        {/* password  */}
                         <div>
                             <label htmlFor="">Password</label><br />
                             <div className='flex relative'>
