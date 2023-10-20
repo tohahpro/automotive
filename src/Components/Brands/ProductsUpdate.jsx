@@ -44,16 +44,16 @@ const ProductsUpdate = () => {
 
 
     return (
-        <div className="bg-[#D3D3D0] py-36  px-56">
+        <div className="py-36  px-56">
             <h2 className='text-center pt-8 pb-4 text-5xl font-semibold font-rancho'>Update Product</h2>
-            <div>
+            <div className="py-16">
                 <form onSubmit={handleUpdateProduct} className="space-y-8">
 
                     {/* form row  */}
                     <div className="md:flex gap-6">
                         <div className="form-control md:w-1/2">
-                            <label className="label">
-                                <span className="label-text text-xl font-semibold">Product Name</span>
+                            <label>
+                                <span className="text-xl font-semibold">Product Name</span>
                             </label>
                             <label>
                                 <input type="text" required name="product_name"
@@ -64,8 +64,8 @@ const ProductsUpdate = () => {
                         {/* Chef*/}
 
                         <div className="form-control md:w-1/2">
-                            <label className="label">
-                                <span className="label-text text-xl font-semibold">Brand Name</span>
+                            <label>
+                                <span className="text-xl font-semibold">Brand Name</span>
                             </label>
                             <label>
                                 <input type="text" name="brand_name"
@@ -82,8 +82,8 @@ const ProductsUpdate = () => {
 
                     <div className="md:flex gap-6">
                         <div className="form-control md:w-1/2">
-                            <label className="label">
-                                <span className="label-text text-xl font-semibold">Type</span>
+                            <label>
+                                <span className="text-xl font-semibold">Type</span>
                             </label>
                             <label>
                                 <input type="text" required name="type"
@@ -95,8 +95,8 @@ const ProductsUpdate = () => {
                         {/* Taste */}
 
                         <div className="form-control md:w-1/2">
-                            <label className="label">
-                                <span className="label-text text-xl font-semibold">Price</span>
+                            <label>
+                                <span className="text-xl font-semibold">Price</span>
                             </label>
                             <label>
                                 <input type="number" required name="price"
@@ -115,8 +115,8 @@ const ProductsUpdate = () => {
                         {/* Category */}
 
                         <div className="form-control md:w-1/2">
-                            <label className="label">
-                                <span className="label-text text-xl font-semibold">Rating</span>
+                            <label>
+                                <span className="text-xl font-semibold">Rating</span>
                             </label>
                             <label>
                                 <input type="number" required name="rating"
@@ -128,8 +128,8 @@ const ProductsUpdate = () => {
                         {/* form Photo url  */}
 
                         <div className="form-control md:w-1/2">
-                            <label className="label">
-                                <span className="label-text text-xl font-semibold">Photo</span>
+                            <label>
+                                <span className="text-xl font-semibold">Photo</span>
                             </label>
                             <label>
                                 <input type="text" required name="photo"

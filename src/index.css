@@ -21,3 +21,19 @@ body {
 .Slider-img-2 {
     background-image: url('https://i.ibb.co/VYNd6jb/slider-image-4-1.jpg');
 }
+
+
+
+.dark-theme {
+    background-color: rgb(14, 13, 13);
+    color: rgb(112, 117, 122);
+
+}
+
+
+.light-theme {
+
+    background-color: #c9c8c5ce;
+
+
+}

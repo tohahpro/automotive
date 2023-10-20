@@ -60,8 +60,8 @@ const ProductsDetails = () => {
 
 
     return (
-        <div className="flex justify-center items-center h-[100vh] bg-[#D3D3D0]">
-            <div className="border rounded-xl bg-slate-100 w-[40rem]">
+        <div className="flex justify-center items-center h-[100vh] ">
+            <div className="border rounded-xl bg-slate-100 w-[40rem] ">
                 {/* photo  */}
                 <div className="flex items-center justify-center">
                     <img src={details.photo} alt="" />

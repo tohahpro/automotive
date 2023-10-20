@@ -1,7 +1,9 @@
 // import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
-import Banner from "./Banner";
+
 import { useEffect, useState } from "react";
+import Banner from "./Banner";
+
 // import img from '../../../assets/image/Home-page-bottom-image.jpg'
 
 
@@ -11,7 +13,6 @@ const Home = () => {
 
 
     const [data, setData] = useState([])
-
 
 
     useEffect(() => {
@@ -25,9 +26,15 @@ const Home = () => {
 
 
     return (
-        <div className="bg-[#c9c8c5ce]">
+        <div>
             <Banner></Banner>
+
+            <div className=" flex justify-end">
+
+            </div>
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-20 lg:px-56">
+
                 {
                     data.map(item =>
                         <div
@@ -50,6 +57,7 @@ const Home = () => {
 
             <div className="h-[30vh] lg:h-[70vh] w-full bg-center bg-cover bottom-img">
                 <div className="h-[70vh] bg-black/50 space-y-6">
+
                     <h2 className="text-2xl lg:text-5xl text-center font-semibold px-1 pt-20 lg:pt-60 text-white lg:w-[40rem] mx-auto">{`Let's Make Your Event Memorable!`}</h2>
                     <p className="lg:w-[50rem] mx-auto text-center lg:pt-4 text-xs px-2 lg:px-0 lg:text-sm font-normal text-white">
 

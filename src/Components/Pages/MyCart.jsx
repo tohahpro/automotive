@@ -46,11 +46,11 @@ const MyCart = () => {
     }
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-10 gap-y-5 px-56 py-60 bg-[#D3D3D0]">
+        <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-10 gap-y-5 px-56 py-60">
             {
                 products.map(product =>
                     <div key={product._id}>
-                        <div className="card card-side bg-base-100 shadow-xl">
+                        <div className="card card-side bg-base-100 shadow-xl ">
                             <figure><img src={product.photo} alt="Movie" /></figure>
                             <div className="card-body">
                                 <h2 className="card-title">{product.product_name}</h2>
