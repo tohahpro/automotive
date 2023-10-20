@@ -4,7 +4,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 
 
-// import Logo from "../Logo/Logo";
+import Logo from "../../assets/image/logo-icons/logo.png";
 
 
 const Navbar = () => {
@@ -43,11 +43,11 @@ const Navbar = () => {
         const changeColor = () => {
             if (window.scrollY >= 30) {
                 setColor('#111111')
-                setTextColor('#ffffff')
+                setTextColor('#EF4444')
             }
             else {
                 setColor('transparent')
-                setTextColor('#111111')
+                setTextColor('#EF4444')
             }
         }
         window.addEventListener('scroll', changeColor);
@@ -62,12 +62,13 @@ const Navbar = () => {
 
 
                 <div className="flex items-center justify-between">
-                    {/* <Logo></Logo> */}
+                    <div className="flex items-center gap-2">
+                        <img className="w-24" src={Logo} alt="" />
+                        <p className="text-xl font-semibold text-red-500">GearHeads</p>
+                    </div>
 
-                    <h2 className="text-3xl font-medium text-white pl-2 md:pl-0">Logo</h2>
 
-
-                    <div className="md:hidden justify-end text-2xl pr-2 text-white" onClick={() => setOpen(!open)}>
+                    <div className="md:hidden justify-end text-2xl pr-2 text-slate-400" onClick={() => setOpen(!open)}>
                         {
                             open === true ? <BiMenuAltRight></BiMenuAltRight> : <BiMenu></BiMenu>
                         }
@@ -75,7 +76,7 @@ const Navbar = () => {
 
                     <div
                         style={{ color: `${textColor}` }}
-                        className={`absolute md:flex mt-64 px-36 bg-black md:m-0  md:p-0 duration-2000
+                        className={`absolute md:flex mt-64 px-36 bg-slate-300 md:m-0  md:p-0 duration-2000
                 ${open ? ' ' : 'hidden'} md:static 
                 md:bg-transparent text-center space-y-2`}
                     >

@@ -37,7 +37,7 @@ const ProductsDetails = () => {
         console.log(orderItem);
 
 
-        fetch('http://localhost:5000/users', {
+        fetch('https://automotive-server-site-two.vercel.app/users', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

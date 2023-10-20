@@ -21,7 +21,7 @@ const ProductsUpdate = () => {
         const product = { product_name, brand_name, type, price, rating, photo }
         console.log(product);
 
-        fetch(`http://localhost:5000/products/${_id}`, {
+        fetch(`https://automotive-server-site-two.vercel.app/products/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

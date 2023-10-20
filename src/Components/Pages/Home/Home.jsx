@@ -79,13 +79,13 @@ const Home = () => {
             </div>
 
 
-            <div className="h-[30vh] lg:h-[70vh] w-full bg-center bg-cover bottom-img">
-                <div className="h-[70vh] bg-black/50 space-y-6">
+            <div className="h-[30vh] lg:h-[50vh] w-full bg-center bg-cover header-img1">
+                <div className="h-[50vh] bg-black/50 space-y-6">
 
-                    <h2 className="text-2xl lg:text-5xl text-center font-semibold px-1 pt-20 lg:pt-60 text-white lg:w-[40rem] mx-auto">{`Let's Make Your Event Memorable!`}</h2>
-                    <p className="lg:w-[50rem] mx-auto text-center lg:pt-4 text-xs px-2 lg:px-0 lg:text-sm font-normal text-white">
+                    <h2 className="text-2xl lg:text-5xl text-center font-semibold px-1 pt-12 lg:pt-36 text-white lg:w-[40rem] mx-auto">Discover Our Featured Brands</h2>
+                    <p className="lg:w-[50rem] mx-auto text-center lg:pt-4 text-xs px-2 lg:px-0 lg:text-lg font-normal text-white">
 
-                        {`Let your imagination run wild as we bring your visions to life. It's not just an event; it's an experience, a memory, a story waiting to be told. Join us in creating magic, one event at a time!`}</p>
+                        {`Explore our extensive catalog, get expert insights, and find the best products to elevate your driving experience. Whether you're a seasoned enthusiast or just starting your journey, we've got something special for you. Start your automotive adventure today`}</p>
                 </div>
             </div>
 

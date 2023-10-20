@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 
 const MyCart = () => {
 
-    const dataLoaded = useLoaderData()
+    const dataLoaded = useLoaderData([])
     const [products, setProducts] = useState(dataLoaded)
 
 
@@ -23,7 +23,7 @@ const MyCart = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/users/${_id}`, {
+                fetch(`https://automotive-server-site-two.vercel.app/users/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -48,7 +48,7 @@ const MyCart = () => {
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-10 gap-y-5 lg:px-56 py-60">
             {
-                products.map(product =>
+                products?.map(product =>
                     <div key={product._id}>
                         <div className="card card-side bg-base-100 shadow-xl ">
                             <figure><img src={product.photo} alt="Movie" /></figure>

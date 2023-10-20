@@ -11,16 +11,19 @@ import Products from "../Brands/Products";
 import ProductsDetails from "../Brands/ProductsDetails";
 import ProductsUpdate from "../Brands/ProductsUpdate";
 import PrivateRouter from "./PrivateRouter";
+import ErrorPage from "../Pages/Errorpage";
 
 
 const CreateRouter = createBrowserRouter([
     {
         path: '/',
         element: <MainLayout></MainLayout>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
                 element: <Home></Home>,
+
 
             },
             {
@@ -30,7 +33,7 @@ const CreateRouter = createBrowserRouter([
             {
                 path: '/myCart',
                 element: <PrivateRouter><MyCart></MyCart></PrivateRouter>,
-                loader: () => fetch('http://localhost:5000/users')
+                loader: () => fetch('https://automotive-server-site-two.vercel.app/users')
             },
             {
                 path: '/login',
@@ -43,18 +46,18 @@ const CreateRouter = createBrowserRouter([
             {
                 path: '/products/:brand_name',
                 element: <Products></Products>,
-                loader: () => fetch('http://localhost:5000/products')
+                loader: () => fetch('https://automotive-server-site-two.vercel.app/products')
 
             },
             {
                 path: '/productsDetails/:id',
                 element: <PrivateRouter><ProductsDetails></ProductsDetails></PrivateRouter>,
-                loader: () => fetch('http://localhost:5000/products')
+                loader: () => fetch('https://automotive-server-site-two.vercel.app/products')
             },
             {
                 path: '/productUpdate/:id',
                 element: <PrivateRouter><ProductsUpdate></ProductsUpdate></PrivateRouter>,
-                loader: ({ params }) => fetch(`http://localhost:5000/products/${params.id}`)
+                loader: ({ params }) => fetch(`https://automotive-server-site-two.vercel.app/products/${params.id}`)
             }
 
         ]

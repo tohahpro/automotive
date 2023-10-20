@@ -8,11 +8,12 @@ const Products = () => {
     const databaseLoaded = useLoaderData([])
     const { brand_name } = useParams()
 
+
     const [data, setData] = useState([])
     const [noDataFound, setNoDataFound] = useState(false)
 
     useEffect(() => {
-        const filterData = databaseLoaded.filter(item => item.brand_name.toUpperCase() == brand_name.toUpperCase())
+        const filterData = databaseLoaded?.filter(item => item.brand_name.toUpperCase() == brand_name.toUpperCase())
 
         if (filterData.length > 0) {
             setData(filterData)
@@ -33,10 +34,10 @@ const Products = () => {
                     :
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:mx-56 py-40">
                         {
-                            data.map((item, idx) =>
+                            data?.map((item, idx) =>
                                 <div key={idx}>
                                     <div className="card card-compact w-full bg-base-100 shadow-xl">
-                                        <figure><img src={item.photo} alt="Shoes" /></figure>
+                                        <figure><img className="h-64" src={item.photo} alt="Shoes" /></figure>
                                         <div className="card-body">
                                             <h2 className="card-title">Name : {item.product_name}</h2>
 
