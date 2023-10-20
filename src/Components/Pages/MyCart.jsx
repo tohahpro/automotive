@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import Rating from "../Brands/Rating";
 import Swal from "sweetalert2";
-
+import { MdDelete } from 'react-icons/md';
 
 const MyCart = () => {
 
@@ -50,18 +50,17 @@ const MyCart = () => {
             {
                 products?.map(product =>
                     <div key={product._id}>
-                        <div className="card card-side bg-base-100 shadow-xl ">
+                        <div className="card font-sans card-side bg-base-100 shadow-xl ">
                             <figure><img src={product.photo} alt="Movie" /></figure>
-                            <div className="card-body">
-                                <h2 className="card-title">{product.product_name}</h2>
-                                <p>{product.type}</p>
+                            <div className="card-body w-5/6">
                                 <Rating rating={product.rating}></Rating>
-
-                                <p>Price : {product.price} $</p>
+                                <h2 className="card-title">{product.product_name}</h2>
+                                <p><span className="font-semibold">Type :</span> {product.type}</p>
+                                <p><span className="font-semibold">Price :</span> {product.price} $</p>
                                 <div className="card-actions">
                                     <button
                                         onClick={() => handleDelete(product._id)}
-                                        className="btn btn-wide">Delete</button>
+                                        className="btn px-6"><MdDelete className="text-lg"></MdDelete> Delete</button>
                                 </div>
                             </div>
                         </div>

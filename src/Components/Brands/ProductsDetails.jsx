@@ -61,8 +61,8 @@ const ProductsDetails = () => {
 
     return (
         <div>
-            <div className="flex justify-center items-center py-60">
-                <div className="border rounded-xl bg-slate-100 w-[40rem]">
+            <div className="flex font-sans justify-center items-center py-60">
+                <div className="border rounded-xl bg-slate-100 w-[40rem] py-8">
                     {/* photo  */}
                     <div className="flex items-center justify-center">
                         <img src={details.photo} alt="" />
@@ -70,13 +70,11 @@ const ProductsDetails = () => {
 
                     {/* body  */}
                     <div className="px-12 space-y-2 ">
-
-                        <h2 className="text-xl font-semibold">Brand : {details.brand_name}</h2>
-                        <p className="text-xl font-semibold">Product : {details.product_name}</p>
-
                         <p className="flex items-center gap-1"><span className="text-xl font-semibold"> Rating :</span> <Rating rating={details.rating}></Rating></p>
+                        <h2 className="text-xl font-semibold">Brand : {details.brand_name}</h2>
+                        <p className="text-xl font-semibold">Product Name : {details.product_name}</p>
 
-                        <p className="text-base font-medium"><span className="text-xl font-semibold">Details : </span> {details.description}</p>
+                        <p className="text-base"><span className="text-xl font-semibold">Details : </span> {details.description}</p>
 
                         <p className="text-xl font-semibold">Price : {details.price} $</p>
                         <Link

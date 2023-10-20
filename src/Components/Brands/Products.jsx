@@ -36,20 +36,21 @@ const Products = () => {
                         {
                             data?.map((item, idx) =>
                                 <div key={idx}>
-                                    <div className="card card-compact w-full bg-base-100 shadow-xl">
+                                    <div className="card card-compact w-full bg-base-200 shadow-xl">
                                         <figure><img className="h-64" src={item.photo} alt="Shoes" /></figure>
                                         <div className="card-body">
+                                            <Rating rating={item.rating}></Rating>
                                             <h2 className="card-title">Name : {item.product_name}</h2>
 
-                                            <h2 className="card-title">{item.type}</h2>
-                                            <Rating rating={item.rating}></Rating>
+                                            <h2 className="card-title">Type : {item.type}</h2>
+
                                             <h2 className="card-title font-sans">Price : {item.price} $</h2>
                                             <div className="card-actions flex justify-center">
                                                 <Link to={`/productsDetails/${item._id}`}
-                                                    className="btn px-6">Details button
+                                                    className="btn px-6 bg-black text-white">Details button
                                                 </Link>
                                                 <Link to={`/productUpdate/${item._id}`}
-                                                    className="btn px-6">
+                                                    className="btn px-6 bg-black text-white">
                                                     Update button
                                                 </Link>
                                             </div>

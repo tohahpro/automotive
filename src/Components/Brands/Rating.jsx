@@ -29,7 +29,7 @@ const Rating = ({ rating }) => {
     })
     return (
 
-        <div className='flex text-base text-[#ccc593] '>
+        <div className='flex text-base text-[#df6c5df3] '>
             {ratingStar}
         </div>
 
