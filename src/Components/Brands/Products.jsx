@@ -17,7 +17,7 @@ const Products = () => {
         if (filterData.length > 0) {
             setData(filterData)
         } else {
-            setNoDataFound('There is no data for this since you did not donate.')
+            setNoDataFound('For the time being, this firm has no product.')
         }
 
     }, [databaseLoaded, brand_name])

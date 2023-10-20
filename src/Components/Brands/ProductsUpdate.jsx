@@ -57,7 +57,7 @@ const ProductsUpdate = () => {
                             </label>
                             <label>
                                 <input type="text" required name="product_name"
-                                    value={product_name} placeholder="Enter product name" className="input rounded-sm w-full" />
+                                    defaultValue={product_name} placeholder="Enter product name" className="input rounded-sm w-full" />
                             </label>
                         </div>
 

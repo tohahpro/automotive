@@ -62,8 +62,8 @@ const Home = () => {
                             key={item.id}>
 
                             <Link to={`/products/${item.brand_name}`}>
-                                <div className="card card-compact w-full bg-base-100 shadow-xl h-60">
-                                    <figure><img className="w-36 lg:w-40" src={item.image} alt="Shoes" /></figure>
+                                <div className="card card-compact w-full bg-base-100 shadow-xl">
+                                    <figure><img className="w-40" src={item.image} alt="Shoes" /></figure>
                                     <div className="card-body">
                                         <h2 className="card-title flex justify-center">{item.brand_name.toUpperCase()}</h2>
                                     </div>
