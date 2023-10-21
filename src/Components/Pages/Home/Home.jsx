@@ -31,7 +31,7 @@ const Home = () => {
         <div>
             <Banner></Banner>
 
-            <div className="py-20">
+            <div className="pt-40 pb-20 lg:py-20">
                 <BrandMarquee></BrandMarquee>
             </div>
 

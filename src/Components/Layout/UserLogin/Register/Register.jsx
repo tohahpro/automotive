@@ -77,7 +77,7 @@ const Register = () => {
                         {/* email field  */}
                         <div>
                             <label htmlFor="">Email</label><br />
-                            <input className='border w-full rounded-md p-2 my-2' type="text" name="Email" placeholder='Type your email' required />
+                            <input className='border w-full rounded-md p-2 my-2' type="text" name="email" placeholder='Type your email' required />
                         </div>
                         {/* image field  */}
                         <div>
