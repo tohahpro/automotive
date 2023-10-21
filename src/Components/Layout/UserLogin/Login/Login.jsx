@@ -53,18 +53,18 @@ const Login = () => {
             <h2 className="text-center text-4xl font-semibold pt-40 mb-16">LogIn Form</h2>
 
             <form onSubmit={handleLogin} className='pb-32'>
-                <div className='max-w-2xl mx-auto border shadow-lg p-8 rounded-xl bg-slate-100'>
+                <div className='max-w-2xl mx-auto border shadow-lg p-8 rounded-xl bg-slate-100 space-y-3'>
 
                     {/* email field  */}
                     <div>
-                        <label htmlFor="">Email</label><br />
-                        <input className='border w-full rounded-md p-2 my-2' type="text" name="email" placeholder='email' required />
+
+                        <input className='border w-full rounded-md p-2 my-2' type="text" name="email" placeholder='Type your email' required />
                     </div>
                     {/* password field  */}
                     <div>
-                        <label htmlFor="">Password</label><br />
+
                         <div className='flex relative'>
-                            <input className='border w-full rounded-md p-2 my-2 ' type={showPassword ? 'text' : 'password'} name="password" placeholder='password' required />
+                            <input className='border w-full rounded-md p-2 my-2 ' type={showPassword ? 'text' : 'password'} name="password" placeholder='Type your password' required />
                             <span onClick={() => setShowPassword(!showPassword)} className="absolute top-4 right-2 text-lg" required>{showPassword ? <AiOutlineEye></AiOutlineEye> : <AiOutlineEyeInvisible></AiOutlineEyeInvisible>}</span>
                         </div>
                     </div>

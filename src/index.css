@@ -38,14 +38,16 @@ body {
 
 .dark-theme {
     background-color: rgb(14, 13, 13);
-    color: rgb(112, 117, 122);
+    color: rgb(163, 169, 173);
 
 }
 
 
+
+
 .light-theme {
 
-    background-color: #d8d1d1;
+    background-color: #eceaea;
 
 
 }

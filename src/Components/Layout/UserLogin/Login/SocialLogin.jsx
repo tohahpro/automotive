@@ -35,7 +35,7 @@ const SocialLogin = () => {
             <div className="flex gap-12">
                 <div
                     onClick={() => handleSocialLogin(googleLogin)}
-                    className="py-2 px-4 flex items-center gap-1 border rounded-md hover:cursor-pointer hover:shadow-2xl shadow-inner shadow-gray-300">
+                    className="py-2 px-4 flex items-center gap-1 border rounded-md hover:cursor-pointer hover:shadow-2xl shadow-gray-300">
                     <FcGoogle className="text-2xl"></FcGoogle> <span className="text-base font-semibold">Google</span>
                 </div>
             </div>

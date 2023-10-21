@@ -64,20 +64,20 @@ const Register = () => {
     return (
         <div>
             <div>
-                <h2 className="text-center text-4xl font-semibold pt-40 mb-16">Register Form</h2>
+                <h2 className="text-center text-4xl font-semibold pt-36 mb-16">Register Form</h2>
 
-                <form onSubmit={handleRegister} className='pb-32'>
-                    <div className='max-w-2xl mx-auto border shadow-lg p-8 rounded-xl bg-slate-100'>
+                <form onSubmit={handleRegister} className='pb-28'>
+                    <div className='max-w-2xl mx-auto border shadow-lg p-8 rounded-xl bg-slate-100 space-y-2'>
 
                         {/* name field  */}
                         <div>
                             <label htmlFor="">Name</label><br />
-                            <input className='border w-full rounded-md p-2 my-2' type="text" name="name" placeholder='Your name' required />
+                            <input className='border w-full rounded-md p-2 my-2' type="text" name="name" placeholder='Type your name' required />
                         </div>
                         {/* email field  */}
                         <div>
                             <label htmlFor="">Email</label><br />
-                            <input className='border w-full rounded-md p-2 my-2' type="text" name="email" placeholder='email' required />
+                            <input className='border w-full rounded-md p-2 my-2' type="text" name="Email" placeholder='Type your email' required />
                         </div>
                         {/* image field  */}
                         <div>
@@ -90,7 +90,7 @@ const Register = () => {
                         <div>
                             <label htmlFor="">Password</label><br />
                             <div className='flex relative'>
-                                <input className='border w-full rounded-md p-2 my-2 ' type={showPassword ? 'text' : 'password'} name="password" placeholder='password' required />
+                                <input className='border w-full rounded-md p-2 my-2 ' type={showPassword ? 'text' : 'password'} name="password" placeholder='Type your password' required />
                                 <span onClick={() => setShowPassword(!showPassword)} className="absolute top-4 right-2 text-lg" required>{showPassword ? <AiOutlineEye></AiOutlineEye> : <AiOutlineEyeInvisible></AiOutlineEyeInvisible>}</span>
                             </div>
                         </div>

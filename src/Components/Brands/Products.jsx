@@ -32,32 +32,39 @@ const Products = () => {
                 noDataFound ?
                     <p className="flex items-center justify-center h-[80vh] text-sm  md:text-xl font-bold">{noDataFound}</p>
                     :
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:mx-56 py-40">
+                    <div>
                         {
-                            data?.map((item, idx) =>
-                                <div key={idx}>
-                                    <div className="card card-compact w-full bg-base-200 shadow-xl">
-                                        <figure><img className="h-64" src={item.photo} alt="Shoes" /></figure>
-                                        <div className="card-body">
-                                            <Rating rating={item.rating}></Rating>
-                                            <h2 className="card-title">Name : {item.product_name}</h2>
+                            data ? <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:mx-56 py-40">
+                                {
+                                    data?.map((item, idx) =>
+                                        <div key={idx}>
+                                            <div className="card card-compact w-full bg-base-200 shadow-xl">
+                                                <figure><img className="h-64" src={item.photo} alt="Shoes" /></figure>
+                                                <div className="card-body">
 
-                                            <h2 className="card-title">Type : {item.type}</h2>
+                                                    <h2 className="card-title font-sans">{item.product_name}</h2>
+                                                    <Rating rating={item.rating}></Rating>
 
-                                            <h2 className="card-title font-sans">Price : {item.price} $</h2>
-                                            <div className="card-actions flex justify-center">
-                                                <Link to={`/productsDetails/${item._id}`}
-                                                    className="btn px-6 bg-black text-white">Details button
-                                                </Link>
-                                                <Link to={`/productUpdate/${item._id}`}
-                                                    className="btn px-6 bg-black text-white">
-                                                    Update button
-                                                </Link>
+                                                    <h2 className="card-title">Type : {item.type}</h2>
+
+                                                    <h2 className="card-title font-sans">Price : <span className="text-red-500"> {item.price} </span>$</h2>
+                                                    <div className="card-actions flex justify-center">
+                                                        <Link to={`/productsDetails/${item._id}`}
+                                                            className="btn px-6 bg-black text-white">Details button
+                                                        </Link>
+                                                        <Link to={`/productUpdate/${item._id}`}
+                                                            className="btn px-6 bg-black text-white">
+                                                            Update button
+                                                        </Link>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                            )
+                                    )
+                                }
+                            </div>
+                                :
+                                <p>loading ....</p>
                         }
                     </div>
             }

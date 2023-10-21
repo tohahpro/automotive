@@ -46,7 +46,7 @@ const Navbar = () => {
                 setTextColor('#EF4444')
             }
             else {
-                setColor('transparent')
+                setColor('#2C2F33')
                 setTextColor('#EF4444')
             }
         }
@@ -82,7 +82,7 @@ const Navbar = () => {
                 ${open ? ' ' : 'hidden'} md:static 
                 md:bg-transparent text-center space-y-2`}
                     >
-                        <ul className="md:flex lg:gap-12 md:items-center md:mr-12  text-lg font-semibold">
+                        <ul className="md:flex lg:gap-12 md:items-center md:mr-12  z-70 text-lg font-semibold">
                             <li>
                                 <NavLink
                                     to="/"

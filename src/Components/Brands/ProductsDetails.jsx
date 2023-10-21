@@ -70,13 +70,11 @@ const ProductsDetails = () => {
 
                     {/* body  */}
                     <div className="px-12 space-y-2 ">
-                        <p className="flex items-center gap-1"><span className="text-xl font-semibold"> Rating :</span> <Rating rating={details.rating}></Rating></p>
-                        <h2 className="text-xl font-semibold">Brand : {details.brand_name}</h2>
-                        <p className="text-xl font-semibold">Product Name : {details.product_name}</p>
-
+                        <p className="text-xl font-semibold">Name : {details.product_name}</p>
+                        <p className="flex items-center gap-1"><span className="text-xl font-semibold"> Ratings :</span> <Rating rating={details.rating}></Rating></p>
                         <p className="text-base"><span className="text-xl font-semibold">Details : </span> {details.description}</p>
 
-                        <p className="text-xl font-semibold">Price : {details.price} $</p>
+                        <p className="text-xl font-semibold">Price : <span className="text-red-500">{details.price}</span> $</p>
                         <Link
                             onClick={handleOrder}
 
