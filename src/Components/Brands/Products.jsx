@@ -39,7 +39,7 @@ const Products = () => {
                                     data?.map((item, idx) =>
                                         <div key={idx}>
                                             <div className="card card-compact w-full bg-base-200 shadow-xl">
-                                                <figure><img className="h-64" src={item.photo} alt="Shoes" /></figure>
+                                                <figure><img className="md:h-64" src={item.photo} alt="Shoes" /></figure>
                                                 <div className="card-body">
 
                                                     <h2 className="card-title font-sans">{item.product_name}</h2>

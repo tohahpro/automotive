@@ -57,7 +57,7 @@ const Navbar = () => {
         <div>
             <nav style={{ backgroundColor: `${color}` }}
                 className="
-                        absolute top-8 left-0 right-0 z-[2]           
+                        absolute left-0 right-0 z-[2]           
                         lg:fixed items-center justify-between lg:top-0 lg:left-0 lg:w-full lg:z-[10] lg:ease-in lg:duration-300 lg:px-56 lg:pb-2 md:pt-6">
 
 
@@ -78,7 +78,7 @@ const Navbar = () => {
 
                     <div
                         style={{ color: `${textColor}` }}
-                        className={`absolute md:flex mt-64 px-36 bg-slate-300 md:m-0  md:p-0 duration-2000
+                        className={`absolute md:flex mt-52 px-36 bg-black md:m-0  md:p-0 duration-2000
                 ${open ? ' ' : 'hidden'} md:static 
                 md:bg-transparent text-center space-y-2`}
                     >
